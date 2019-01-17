@@ -20,14 +20,14 @@
 
 #include <iostream>
 #include <string>
-int doubling(int);
+int doubling(int baseNum);
+
 int main(int argc, char* args[]) {
     int baseNumb = 123;
     int a = doubling(baseNumb);
     std::cout << a << std::endl;
     return 0;
 }
-
 int doubling(int baseNum) {
-    return baseNum*2;
+    return baseNum*2);
 }
