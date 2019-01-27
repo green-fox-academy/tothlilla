@@ -24,21 +24,26 @@ int main() {
 #include <string>
 #include <vector>
 
-std::vector<std::string> putSaturn(const std::vector<std::string>& planets){
+std::vector<std::string> putSaturn(const std::vector<std::string> &planets)
+{
 
-    std::vector<std::string> listNewplanets;
+    std::vector<std::string> listNewplanets; //We created a new vector variable typed string to be independent from original vector
+
     for (unsigned int i = 0; i < planets.size(); ++i) {
-        listNewplanets.push_back(planets[i]);
+        listNewplanets.push_back(planets[i]); //We copied the original elements of the vector in the new vector
     }
 
-    listNewplanets.insert(listNewplanets.begin() + 5, "Saturn");
+    listNewplanets.insert(listNewplanets.begin() + 5, "Saturn"); //We inserted an element in the copied vector
+    //First the index of element where we want to insert, in this case 0+5 = 5 means 5th index
+    //Second the new element
+
     return listNewplanets;
 
 }
 
-int main(int argc, char* args[]){
+int main(int argc, char *args[]) {
 
-    std::vector<std::string> planets = {"Mercury","Venus","Earth","Mars","Jupiter","Uranus","Neptune"};
+    std::vector<std::string> planets = {"Mercury", "Venus", "Earth", "Mars", "Jupiter", "Uranus", "Neptune"};
 
     // Saturn is missing from the planetList
     // Insert it into the correct position
@@ -47,10 +52,9 @@ int main(int argc, char* args[]){
     // Expected output: Mercury Venus Earth Mars Jupiter Saturn Uranus Neptune
     std::vector<std::string> correctPlanets = putSaturn(planets);
 
-    for(int i = 0; i < correctPlanets.size(); ++i) {
+    for (int i = 0; i < correctPlanets.size(); ++i) {
         std::cout << correctPlanets[i] << " ";
     }
-
 
 
     return 0;
