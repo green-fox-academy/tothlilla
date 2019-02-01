@@ -5,9 +5,15 @@
 #ifndef EX_10_PETROL_STATION_STATION_H
 #define EX_10_PETROL_STATION_STATION_H
 
+#include "car.h"
+class Station {
 
-class station {
+public:
+    Station (int gasAmount);
+    void fill(Car car);
 
+private:
+    int gasAmount_;
 };
 
 

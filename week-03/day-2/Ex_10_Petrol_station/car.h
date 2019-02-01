@@ -6,7 +6,15 @@
 #define EX_10_PETROL_STATION_CAR_H
 
 
-class car {
+class Car {
+public:
+    Car(int capacity, int gasAmount);
+    void fill();
+    bool isFull();
+    int gasAmount_;
+    int capacity_;
+
+private:
 
 };
 
