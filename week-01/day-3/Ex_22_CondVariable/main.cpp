@@ -38,11 +38,11 @@ int main(int argc, char* args[]) {
     // if credits are smaller than 50,
     // and isBonus is false decrement c by 1
     // if isBonus is true c should remain the same
-    if (credits >= 50 && isBonus == false) {
+    if (credits >= 50 && !isBonus) {
         c-=2;
-    } else if (credits <= 50 && isBonus == false) {
+    } else if (credits <= 50 && !isBonus) {
         --c;
-    } else if (isBonus == true) {
+    } else if (isBonus) {
         c;
     }
     std::cout << c << std::endl;
