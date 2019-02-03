@@ -12,41 +12,36 @@
 class Animal
 {
     public:
-        Animal(int hunger, int thirst)
-        {
-            _hunger = 50;
-            _thirst = 50;
-        }
-
-
         void eat()
         {
             _hunger--;
+            std::cout << "The hungry: " <<_hunger << std::endl;
         }
-
-
         void drink()
         {
             _thirst--;
+            std::cout << "The thirst: " << _thirst << std::endl;
         }
-
         void play()
         {
             _thirst++;
             _hunger++;
+            std::cout << "The hungry and the thirst: " << _hunger << " " << _thirst << std::endl;
         }
-
-
     private:
 
-        int _hunger;
-        int _thirst;
-
+        int _hunger = 50;
+        int _thirst = 50;
 };
 
 int main(int argc, char* args[])
 {
+    Animal tiger;
+    tiger.eat();
 
+    Animal lion;
+    lion.play();
+    lion.drink();
 
     return 0;
 }
