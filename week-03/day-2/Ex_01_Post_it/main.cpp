@@ -13,32 +13,37 @@
 class Postit
 {
     public:
-        void set_allthings (int bgColor, int txtColor, std::string yourtext) { //Create the function used by the Postit class
+        Postit(std::string bgColor, std::string txtColor, std::string yourtext)
+        {
+            _backgroundColor = bgColor; //First method
+            _textColor = txtColor; //Second method
+            _text = yourtext; //Third method
+        }
+        void set_allthings (std::string bgColor, std::string txtColor, std::string yourtext) { //Create the function used by the Postit class
+            std::cout << _backgroundColor << " " << _textColor << " " << _text << std::endl;
 
-            backgroundColor = bgColor; //First method
-            textColor = txtColor; //Second method
-            text = yourtext; //Third method
         }
 
 
     private:
-        int backgroundColor; //First variable
-        int textColor; //Second variable
-        std::string text; //Third variable
+        std::string _backgroundColor; //First variable
+        std::string _textColor; //Second variable
+        std::string _text; //Third variable
 
 };
 
 
-int main() {
+int main()
+{
 
-    Postit oneText; //First object
-    oneText.set_allthings(orange, blue, "Idea 1");
+    Postit oneText("orange", "blue", "Idea 1"); //First object
+    oneText.set_allthings("orange", "blue", "Idea 1");
 
-    Postit twoText; //Second object
-    twoText.set_allthings(pink, black, "Avesome");
+    Postit twoText("pink", "black", "Avesome"); //Second object
+    twoText.set_allthings("pink", "black", "Avesome");
 
-    Postit threeText; //Third object
-    threeText.set_allthings(yellow, green, "Superb!);
+    Postit threeText("yellow", "green", "Superb!"); //Third object
+    threeText.set_allthings("yellow", "green", "Superb!");
 
     return 0;
 }
