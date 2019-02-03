@@ -2,8 +2,6 @@
 
 int main()
 {
-
-
     int a;
     int mynumbers[5];
     std::cout << "Write 5 numbers: " <<std::endl;
@@ -16,12 +14,11 @@ int main()
 
     for (int i = 0; i < 5; i++) {
         std::cout << *mynumbersPtr <<std::endl; // print out the values of that array using pointers again
-        ++mynumbersPtr;
+        ++mynumbersPtr; //léptetni kell a deference-t is, mert enélkül csak az első elemet nyomtatjuk ki 5-ször
     }
-/*
-    for (int i = 0; i < 5; i++) {
-        std::cout << *(mynumbersPtr + i) <<std::endl; // print out the values of that array using pointers again
-    }
-    */
+    //Second solution
+    //for (int i = 0; i < 5; i++) {
+    //    std::cout << *(mynumbersPtr + i) <<std::endl; // print out the values of that array using pointers again
+    //}
     return 0;
 }
