@@ -6,14 +6,13 @@
 #include <iostream>
 #include <string>
 
-Sharpie::Sharpie(std::string colorS, float widthS)
+Sharpie::Sharpie(std::string color, float width)
 {
-    color = colorS;
-    width = widthS;
+    _color = color;
+    _width = width;
+    _inkAmount;
 }
-void Sharpie::use() {
-    inkAmount--;
-
-
-
+int Sharpie::use() {
+    _inkAmount--;
+    return  _inkAmount;
 }

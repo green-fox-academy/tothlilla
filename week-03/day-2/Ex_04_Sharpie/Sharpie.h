@@ -17,12 +17,12 @@
 class Sharpie
 {
     public:
-        Sharpie(std::string colorS, float widthS);
-        void use();
+        Sharpie(std::string color, float width);
+        int use();
     private:
-        std::string color;
-        float width;
-        float inkAmount = 100;
+        std::string _color;
+        float _width;
+        float _inkAmount = 100;
 };
 
 

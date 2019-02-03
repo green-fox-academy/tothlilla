@@ -10,8 +10,9 @@
 //  We can use() the sharpie objects
 //      which decreases inkAmount
 int main() {
-    std::cout << "Hello, World!" << std::endl;
-
-
+    Sharpie first("green", 20);
+    std::cout << first.use() << std::endl;
+    std::cout << first.use() << std::endl;
+    std::cout << first.use() << std::endl;
     return 0;
 }
