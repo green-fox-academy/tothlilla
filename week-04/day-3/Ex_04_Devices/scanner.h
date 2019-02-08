@@ -5,7 +5,12 @@
 #ifndef EX_04_DEVICES_SCANNER_H
 #define EX_04_DEVICES_SCANNER_H
 
-class scanner {
+class Scanner {
+ public:
+  Scanner(int speed);
+  void scan();
+ protected:
+  int _speed;
 
 };
 

@@ -4,8 +4,12 @@
 
 #ifndef EX_04_DEVICES_PRINTER_H
 #define EX_04_DEVICES_PRINTER_H
+#include <iostream>
 
-class printer {
+class Printer {
+ public:
+  virtual std::string getSize() = 0;
+  void print();
 
 };
 
