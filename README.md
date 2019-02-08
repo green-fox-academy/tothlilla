@@ -1,1 +1,1 @@
-Link[Link to my repo](https://github.com/tothlilla/todo-app/readme.md)
+[Link to my TODO_APP](https://github.com/tothlilla/todo-app)
