@@ -22,17 +22,26 @@ int main()
 }
 bool copy(std::string firstFile, std::string secondFile)
 {
+
+  std::string line;
   std::ifstream whatUWant(firstFile);
   std::ofstream whereUWant(secondFile);
-  std::string line;
-  int linecounterOne = 0;
-  int linecounterTwo = 0;
+  try {
+
+      if (!whatUWant.is_open()){
+        throw 99;
+      }
+      if (!whereUWant.is_open()){
+        throw 99;
+      }
+  } catch (int x) {
+      return false;
+  }
   while (std::getline(whatUWant, line)){
     whereUWant << line << std::endl;
-    linecounterOne++;
-    linecounterTwo++;
   }
-  return linecounterOne == linecounterTwo;
+  //return linecounterOne == linecounterTwo;
+  return true;
 
   whatUWant.close();
   whereUWant.close();
