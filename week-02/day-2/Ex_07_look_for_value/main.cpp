@@ -1,8 +1,8 @@
 #include <iostream>
 
 
-int lookforvalue (int myarray[], int size,  int paranumb){
-
+int lookforvalue (int myarray[], int size,  int paranumb)
+{
     int a;
     for (int i = 0; i < size ; ++i) {
         if (paranumb == myarray[i]){
@@ -11,10 +11,7 @@ int lookforvalue (int myarray[], int size,  int paranumb){
             a = 0;
         }
     }
-
     return a;
-
-
 }
 
 int main()

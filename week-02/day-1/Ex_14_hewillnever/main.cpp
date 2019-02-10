@@ -1,30 +1,3 @@
-/*
-#include <iostream>
-#include <map>
-#include <string>
-#include <vector>
-
-int main() {
-
-    std::vector<int> ages = {24, 32, 22, 55, 105, 68};
-    ages.push_back(48);
-    std::cout << ages[2] << std::endl;    // 2? Who is 2?
-
-
-    std::map<std::string, int> namesToAges;    // Both the key and the value types are declared
-
-    namesToAges["Peti"] = 22;
-    namesToAges["Marci"] = 48;
-
-    std::cout << namesToAges["Peti"] << std::endl;    // prints 22 as expected
-
-    for (std::map<std::string, int>::iterator it = namesToAges.begin(); it != namesToAges.end(); ++it) {
-        std::cout << it->first << " is " << it->second << " years old" << std::endl;
-    }
-    return 0;
-}
- */
-
 #include <iostream>
 #include <string>
 #include <vector>
