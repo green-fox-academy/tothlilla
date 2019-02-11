@@ -32,8 +32,10 @@ std::vector<std::string> putSaturn(const std::vector<std::string> &planets)
     for (unsigned int i = 0; i < planets.size(); ++i) {
         listNewplanets.push_back(planets[i]); //We copied the original elements of the vector in the new vector
     }
+    std::string sat = "Saturn";
+    listNewplanets.insert(listNewplanets.begin() + 5, sat);
 
-    listNewplanets.insert(listNewplanets.begin() + 5, "Saturn"); //We inserted an element in the copied vector
+    // listNewplanets.insert(listNewplanets.begin() + 5, "Saturn", 0); //We inserted an element in the copied vector
     //First the index of element where we want to insert, in this case 0+5 = 5 means 5th index
     //Second the new element
 
