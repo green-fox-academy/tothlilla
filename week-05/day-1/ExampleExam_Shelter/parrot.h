@@ -4,13 +4,12 @@
 
 #ifndef EXAMPLEEXAM_SHELTER_PARROT_H
 #define EXAMPLEEXAM_SHELTER_PARROT_H
+#include "animal.h"
 
-
-
-class parrot {
-
+class Parrot : public Animal
+{
+ public:
+  Parrot(std::string name = "Parrot");
 };
-
-
 
 #endif //EXAMPLEEXAM_SHELTER_PARROT_H

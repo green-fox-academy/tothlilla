@@ -3,3 +3,8 @@
 //
 
 #include "cat.h"
+
+
+Cat::Cat(std::string name) : Animal(name, 10) {
+
+}

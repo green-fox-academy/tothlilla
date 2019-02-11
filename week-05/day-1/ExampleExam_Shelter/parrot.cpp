@@ -3,3 +3,8 @@
 //
 
 #include "parrot.h"
+
+Parrot::Parrot(std::string name) : Animal(name, 50)
+{
+
+}

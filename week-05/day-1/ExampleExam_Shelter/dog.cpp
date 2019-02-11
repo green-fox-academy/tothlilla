@@ -3,3 +3,8 @@
 //
 
 #include "dog.h"
+Dog::Dog(std::string name) : Animal(name, 30)
+{
+
+}
+
