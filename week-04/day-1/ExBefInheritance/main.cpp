@@ -5,21 +5,8 @@
 #include "student.h"
 #include "mentor.h"
 #include "sponsor.h"
-#include "gender.h"
 
-/*class Gender
-{
- public:
-  Gender() {
-    std::string _gender = "male";
-  }
-  std::string MALE(std::string _gender)
-  {
-    return _gender
-  }
-};*/
-
-std::string enum_to_string(Gender gender)
+/*std::string enum_to_string(Gender gender)
 {
   switch (gender) {
     case Gender::MALE:
@@ -28,12 +15,19 @@ std::string enum_to_string(Gender gender)
       return std::string("female");
   }
 }
+ */
 
 int main()
 {
   std::vector<Person*> people;
 
+  //ez a három ugyanaz
+  //int a = int (0);
+  //int b(0);
+  //int c = 0;
+
   Person* mark = new Person("Mark", 46, Gender::MALE);
+  //Person* mark("Mark", 46, Gender::MALE); elméletileg a kettő ugyanaz
   people.push_back(mark);
   Person* jane = new Person();
   people.push_back(jane);

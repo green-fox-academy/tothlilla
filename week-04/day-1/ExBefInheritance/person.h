@@ -4,39 +4,39 @@
 #ifndef EXBEFINHERITANCE_PERSON_H
 #define EXBEFINHERITANCE_PERSON_H
 #include <string>
-#include "gender.h"
 
+//Case1
+//const int MALE = 0; a const nem szükséges
+//const int FEMALE = 1; a const nem szükséges
+//const int TRANSGENDER= 2; a const nem szükséges
+//public:
+//Person (int gender)
+//használat a main-ben:
+//int GENDER FEMALE
+
+//Ha enumot használok, akkor a main-ben ezt csinálom
+//Scope resolution operator
+//Person p(Gender::FEMALE);
+
+enum Gender
+{
+    MALE,
+    FEMALE
+};
+//a declarációnál kell a pontos vessző
+std::string getGenderString(Gender gender); //ezt azért kell kivülre rakni, mert így fogja látni a student és a többiek
 class Person
- {
- public:
-    Person(std::string name, int age, Gender gender);
-    Person();
-    void introduce();
-    void getGoal();
-    std::string _name = "Jane Doe";
-    int _age = 30;
-    Gender _gender = Gender::FEMALE;
- private:
- };
-
-/* public:
-  Person(std::string name, int age, std::string gender);
+{
+public:
+  Person(std::string name, int age, Gender gender);
   Person();
+  //std::string getGenderString(Gender gender);
   void introduce();
   void getGoal();
-  std::string _name = "Jane Doe";
-  int _age = 30;
-  std::string _gender = "female";
- private:
-  std::string enum_to_string(Gender gender)
-  {
-    switch (gender) {
-      case Gender::MALE:
-        return std::string("male");
-      case Gender::FEMALE:
-        return std::string("female");
-    }
-  }
+private:
+    std::string _name;
+    int _age;
+    Gender _gender; // = Gender::FEMALE; //0: Male, 2: Female, 3: Transgender
 };
-*/
+
 #endif //EXBEFINHERITANCE_PERSON_H

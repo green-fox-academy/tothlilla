@@ -5,7 +5,7 @@
 #ifndef EX_03_AIRCRAFT_AIRCRAFT_H
 #define EX_03_AIRCRAFT_AIRCRAFT_H
 
-class aircraft {
+class Aircraft {
 
 };
 

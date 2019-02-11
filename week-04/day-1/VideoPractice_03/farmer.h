@@ -5,8 +5,10 @@
 #ifndef VIDEOPRACTICE_03_FARMER_H
 #define VIDEOPRACTICE_03_FARMER_H
 
-class farmer {
-
+#include "person.h"
+class Farmer: public Person
+{
+  //void introduce();
 };
 
 #endif //VIDEOPRACTICE_03_FARMER_H

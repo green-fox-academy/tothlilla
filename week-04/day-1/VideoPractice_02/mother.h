@@ -5,7 +5,13 @@
 #ifndef VIDEOPRACTICE_02_MOTHER_H
 #define VIDEOPRACTICE_02_MOTHER_H
 
-class mother {
+class Mother {
+   public:
+      Mother();
+      ~Mother();
+   protected:
+
+   private:
 
 };
 

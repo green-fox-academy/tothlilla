@@ -3,7 +3,16 @@
 //
 #include <iostream>
 #include "person.h"
-#include "gender.h"
+//#include "gender.h"
+
+std::string getGenderString(Gender gender)
+{
+  if(gender ==Gender::MALE){
+      return "male";
+  } else if (gender ==Gender::FEMALE) {
+      return "female";
+  }
+}
 
 Person::Person(std::string name, int age, Gender gender)
 {
@@ -13,11 +22,13 @@ Person::Person(std::string name, int age, Gender gender)
 }
 Person::Person()
 {
-
+  _name = "Jane Doe";
+  _age = 30;
+  _gender = Gender::FEMALE;
 }
 void Person::introduce()
 {
-  std::cout << "Hi, I'm " << _name << ", a " << _age << "year old " << _gender << "." << std::endl;
+  std::cout << "Hi, I'm " << _name << ", a " << _age << "year old " << getGenderString(_gender) << "." << std::endl;
 }
 void Person::getGoal()
 {

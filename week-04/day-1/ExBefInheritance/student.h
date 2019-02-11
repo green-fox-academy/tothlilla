@@ -4,7 +4,8 @@
 #ifndef EXBEFINHERITANCE_STUDENT_H
 #define EXBEFINHERITANCE_STUDENT_H
 #include <string>
-#include "gender.h"
+#include "person.h"
+//#include "gender.h"
 
 class Student {
  public:
@@ -13,13 +14,13 @@ class Student {
   void skipDays(int numberOfDays);
   void introduce();
   void getGoal();
-  std::string _name = "Jane Doe";
-  int _age = 30;
-  Gender _gender = Gender::FEMALE;
-  std::string _previousOrganization = "The School of Life";
-  int _skippedDays = 0;
- private:
 
+ private:
+  std::string _name;
+  int _age;
+  Gender _gender;
+  std::string _previousOrganization;
+  int _skippedDays;
 };
 
 #endif //EXBEFINHERITANCE_STUDENT_H

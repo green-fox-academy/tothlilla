@@ -5,7 +5,10 @@
 #ifndef VIDEOPRACTICE_03_PERSON_H
 #define VIDEOPRACTICE_03_PERSON_H
 
-class person {
+class Person {
+ public:
+  virtual void introduce();
+
 
 };
 

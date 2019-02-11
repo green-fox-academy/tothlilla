@@ -15,22 +15,18 @@ int main() {
     int carFourAmount = 1;
     int carFiveAmount  = 3;
 
-    Station remained(100);
-
+    Station stationCapacity(100);
 
     Car car1(carOneCapacity, carOneAmount);
-    remained.fill(car1);
+    stationCapacity.fill(car1);
     Car car2(carTwoCapacity, carTwoAmount);
-    remained.fill(car2);
+    stationCapacity.fill(car2);
     Car car3(carThreeCapacity, carThreeAmount);
-    remained.fill(car3);
+    stationCapacity.fill(car3);
     Car car4(carFourCapacity, carFourAmount);
-    remained.fill(car4);
+    stationCapacity.fill(car4);
     Car car5(carFiveCapacity, carFiveAmount);
-    remained.fill(car5);
-
+    stationCapacity.fill(car5);
     //std::cout << remained.fill(car1) << std::endl;
-
-
     return 0;
 }

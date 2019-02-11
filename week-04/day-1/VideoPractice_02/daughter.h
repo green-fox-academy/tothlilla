@@ -5,7 +5,14 @@
 #ifndef VIDEOPRACTICE_02_DAUGHER_H
 #define VIDEOPRACTICE_02_DAUGHER_H
 
-class daugher {
+#include "mother.h"
+class Daughter: public Mother
+{
+   public:
+      Daughter();
+      ~Daughter();
+   protected:
+   private:
 
 };
 

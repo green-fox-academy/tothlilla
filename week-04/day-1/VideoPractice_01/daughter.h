@@ -5,7 +5,13 @@
 #ifndef VIDEOPRACTICE_DAUGHTER_H
 #define VIDEOPRACTICE_DAUGHTER_H
 
-class daughter {
+class Daughter: public Mother
+{
+   public:
+      Daughter();
+      void doSomething();
+   protected:
+   private:
 
 };
 

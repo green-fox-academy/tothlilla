@@ -5,12 +5,8 @@
 #ifndef LESSONPRACTICE_1_MYCLASS_H
 #define LESSONPRACTICE_1_MYCLASS_H
 
-
-
-class myClass {
+class MyClass {
 
 };
-
-
 
 #endif //LESSONPRACTICE_1_MYCLASS_H

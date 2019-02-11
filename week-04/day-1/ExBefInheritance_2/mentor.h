@@ -5,7 +5,26 @@
 #ifndef EXBEFINHERITANCE_2_MENTOR_H
 #define EXBEFINHERITANCE_2_MENTOR_H
 
-class mentor {
+#include "person.h"
+
+enum Level
+{
+  JUNIOR,
+  INTERMEDIATE,
+  SENIOR
+};
+
+std::string getLevelString(Level level);
+
+class Mentor: public Person
+{
+ public:
+  Mentor();
+  Mentor(std::string name, int age, Gender gender, Level level);
+  void getGoal() override;
+  void introduce() override;
+ private:
+  Level _level;
 
 };
 

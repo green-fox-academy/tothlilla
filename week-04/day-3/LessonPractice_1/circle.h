@@ -4,8 +4,14 @@
 
 #ifndef LESSONPRACTICE_1_CIRCLE_H
 #define LESSONPRACTICE_1_CIRCLE_H
+#include "shape.h"
 
-class circle {
+class Circle : public Shape {
+  int radius;
+ public:
+  Circle(int x, int y, int rad);
+  double circumference();
+  double area();
 
 };
 
