@@ -1,0 +1,16 @@
+//
+// Created by Lilla on 2019. 02. 11..
+//
+
+#ifndef EXAMPLEEXAM_SHELTER_ANIMALSHELTER_H
+#define EXAMPLEEXAM_SHELTER_ANIMALSHELTER_H
+
+
+
+class animalshelter {
+
+};
+
+
+
+#endif //EXAMPLEEXAM_SHELTER_ANIMALSHELTER_H
