@@ -13,13 +13,17 @@ class Pirate {
   bool captain();
   bool woodLeg();
   std::string toString();
+  int getGold();
+  int _gold;
+  std::string _name;
+  std::string getName();
 
  private:
   bool _isCaptain;
   bool _isWoodLeg;
-  std::string _name;
-  int _gold = 0;
-  int _healthPoint = 10;
+
+
+  int _healthPoint;
 
 
 };

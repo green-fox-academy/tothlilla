@@ -50,9 +50,10 @@ int main()
   ship.addPirate(pirate1);
   ship.addPirate(pirate2);
   ship.addPirate(pirate3);
-/*
+
   ship.prepareForBattle();
   ship.lastDayOnTheShip();
+
 
   std::cout << "The names of the poor pirates are: " << std::endl;
   std::vector<std::string> poorPirateNames = ship.getPoorPirates();
@@ -61,6 +62,6 @@ int main()
   }
 
   std::cout << "The total amount of gold on the ship is " <<ship.getGolds() << std::endl;
-*/
+
   return 0;
 }

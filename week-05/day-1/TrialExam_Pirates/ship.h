@@ -10,6 +10,7 @@
 class Ship {
  public:
   Ship();
+
   std::vector<std::string> getPoorPirates();
   int getGolds();
   void lastDayOnTheShip();
@@ -18,7 +19,7 @@ class Ship {
 
  private:
   //std::vector<Pirate> _pirates;
-  std::vector<Pirate*> _pirates;
+  std::vector<Pirate> _pirates;
 
 };
 

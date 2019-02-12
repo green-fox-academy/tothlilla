@@ -10,6 +10,7 @@ Pirate::Pirate(std::string name, bool isCaptain, bool isWoodLeg)
   _name = name;
   _isCaptain = isCaptain;
   _isWoodLeg = isWoodLeg;
+  _gold = 0;
 
 }
 
@@ -33,11 +34,11 @@ void Pirate::party()
 }
 bool Pirate::captain() {
 
-  return false;
+  return _isCaptain;
 }
 bool Pirate::woodLeg() {
 
-  return false;
+  return _isWoodLeg;
 }
 std::string Pirate::toString() {
   if (_isWoodLeg){
@@ -46,4 +47,11 @@ std::string Pirate::toString() {
     return ("Hello, I'm " + _name + ". I still have my real legs and " + std::to_string(_gold) + " golds.");
   }
 }
+int Pirate::getGold() {
+  return _gold;
+}
+std::string Pirate::getName() {
+  return _name;
+}
+
 
