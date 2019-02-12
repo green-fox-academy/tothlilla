@@ -3,16 +3,24 @@
 #include <algorithm>
 #include <vector>
 
-std::vector<std::string>filter(std::vector<std::string> &list, const std::vector<std::string> sweets)
+std::vector<std::string>filter(std::vector<std::string> &list, const std::vector<std::string> &sweets)
 {
-    for (int i = 0; i < list.size(); ++i) {
-       if (std::find(sweets.begin(), sweets.end(), list[i]) == sweets.end()){
-           list.erase(list.begin() + i);
-           i -= 1; //azért kell csökkentenem a sorszámozást, mert a 2. tag törlése után a "Bread" nem a 3. tag, hanem a 2. helyre került
+  std::vector<std::string> tempList;
+  std::vector<std::string> tempSweets;
+  for (unsigned int j = 0; j < list.size(); ++j) {
+      tempList.push_back(list[j]);
+  }
+  for (unsigned int j = 0; j < sweets.size(); ++j) {
+      tempSweets.push_back(sweets[j]);
+  }
+
+    for (int i = 0; i < tempList.size(); ++i) {
+       if (std::find(tempSweets.begin(), tempSweets.end(), tempList[i]) != tempSweets.end()){
+           tempList.erase(tempList.begin() + i);
+           i--; //azért kell csökkentenem a sorszámozást, mert a 2. tag törlése után a "Bread" nem a 3. tag, hanem a 2. helyre került
        }
     }
-
-    return list;
+    return tempList;
 }
 
 int main(int argc, char* args[])
