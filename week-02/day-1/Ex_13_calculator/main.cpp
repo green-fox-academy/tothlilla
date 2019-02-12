@@ -1,7 +1,8 @@
 #include <iostream>
 #include <vector>
 
-std::vector<...> calulator(operation, operand);
+
+void calulator(char operation, int operand1, int operand2);
 
 int main(int argc, char* args[])
 {
@@ -22,16 +23,35 @@ int main(int argc, char* args[])
   // Waits for the user input
   // Print the result to the prompt
   // Exit
-  std::cout << "Please type in the expression:" << std::endl;
-  std::vector<std::string> calcOne[0];
-  int sizeOneVector = sizeof(calcOne) / sizeof(calcOne[0]);
-  std::string operation = "";
-  std::vector<int> operand(1);
-  int sizeTwoVector = sizeof(operand) / sizeof(operand[0]);
-  std::cin >> operation[0] >> operand[0] >> operand[1];
-  calulator(operation, operand);
+  std::cout << "Please type in the expression {operation} {operand} {operand}:" << std::endl;
+  char operation;
+  int operand1, operand2;
+  std::cin >> operation >> operand1 >> operand2;
 
-
+  calulator(operation, operand1, operand2);
 
   return 0;
+}
+void calulator(char operation, int operand1, int operand2)
+{
+  switch(operation){
+    case '+':
+      std::cout << operand1 + operand2;
+      break;
+    case '-':
+      std::cout << operand1 - operand2;
+      break;
+    case '*':
+      std::cout << operand1 * operand2;
+      break;
+    case '/':
+      std::cout << operand1 / operand2;
+      break;
+    case '%':
+      std::cout << operand1 % operand2;
+      break;
+    default:
+      std::cout << "Invalid expressions";
+
+  }
 }
