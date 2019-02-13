@@ -24,9 +24,11 @@ class Animal
         }
         void play()
         {
-            _thirst++;
-            _hunger++;
-            std::cout << "The hungry and the thirst: " << _hunger << " " << _thirst << std::endl;
+            //_thirst++;
+            //_hunger++;
+            //std::cout << "The hungry and the thirst: " << _hunger << " and " << _thirst << std::endl;
+            eat();
+            drink();
         }
     private:
 
@@ -38,7 +40,7 @@ int main(int argc, char* args[])
 {
     Animal tiger;
     tiger.eat();
-
+    std::cout << "\n";
     Animal lion;
     lion.play();
     lion.drink();
