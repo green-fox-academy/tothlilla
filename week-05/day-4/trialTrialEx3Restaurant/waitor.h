@@ -9,6 +9,7 @@ class Waitor : public Employee{
  public:
   Waitor(std::string name, int experience = 0);
   void work() override;
+  std::string toString();
  private:
   int _tips = 0;
 

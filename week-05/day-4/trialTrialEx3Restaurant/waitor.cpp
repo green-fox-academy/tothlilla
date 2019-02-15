@@ -13,3 +13,6 @@ Waitor::Waitor(std::string name, int experience) :
 {
 
 }
+std::string Waitor::toString() {
+  return (Employee::toString() + " and got " + std::to_string(_tips) + " dollar for tips");
+}

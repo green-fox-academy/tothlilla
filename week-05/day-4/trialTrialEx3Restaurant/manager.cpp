@@ -8,7 +8,7 @@ void Manager::work() {
 
 }
 void Manager::haveAmeeting() {
-  _moodLevel-=_experience;
+  _moodLevel -= _experience;
 }
 Manager::Manager(std::string name, int experience) :
   Employee(name, experience) {

@@ -4,12 +4,9 @@
 #include "waitor.h"
 #include "chef.h"
 #include "manager.h"
-int main() {
-  std::cout << "Hello, World!" << std::endl;
-
-
-
-  Waitor waiter ("balazs", 5);
+int main()
+{
+  Waitor waiter ("Balazs", 5);
   Chef c ("Top", 6);
   Chef c2 ("Vice",4);
   Manager m("Fread", 7);
@@ -33,7 +30,8 @@ int main() {
 
 
 
-  std::cout << c.toString();
+  std::cout << c2.toString() << std::endl;
+  std::cout << c.toString() << std::endl << std::endl;
 
   std::cout << r.toStringRestaurant();
 

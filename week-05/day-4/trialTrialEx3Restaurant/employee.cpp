@@ -9,5 +9,5 @@ Employee::Employee(std::string name, int experience)
   _name = name;
 }
  std::string Employee::toString() {
-  return (_name + " " + std::to_string(_experience));
+  return (_name + " has " + std::to_string(_experience)) + " experience";
 }
