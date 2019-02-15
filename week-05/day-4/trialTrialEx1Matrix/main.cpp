@@ -9,7 +9,7 @@ bool doesFirstTestPass()
   std::vector<std::vector<int>> secondInput = {{0, 3},{-1, 1}};
 
   //act
-  std::vector<std::vector<int>> result =  calculateMaxMatrix(firstInput, firstInput);
+  std::vector<std::vector<int>> result =  calculateMaxMatrix(firstInput, secondInput);
 
   //assert
   std::vector<std::vector<int>> expected = {{2, 3},{0, 1}};
@@ -23,7 +23,7 @@ bool doesSecondTestPass()
   std::vector<std::vector<int>> secondInput = {{5, 0, 3},{-8,-1, 1},{6,7,8}};
 
   //act
-  std::vector<std::vector<int>> result =  calculateMaxMatrix(firstInput, firstInput);
+  std::vector<std::vector<int>> result =  calculateMaxMatrix(firstInput, secondInput);
 
   //assert
   std::vector<std::vector<int>> expected = {{5, 1, 3},{0, 1, 3}, {6, 7, 8}};
