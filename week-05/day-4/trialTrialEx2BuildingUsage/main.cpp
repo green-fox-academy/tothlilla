@@ -11,13 +11,9 @@ void parseBuildingUsageData(std::string inputFileName, std::string outputFileNam
 int main()
 {
   //std::string input = "usage.txt";
-  parseBuildingUsageData("../../usage.txt","" );
-
+  parseBuildingUsageData("../../usage.txt","../../copy.txt" );
 
   std::cout << "Hello, World!" << std::endl;
-
-
-
 
   return 0;
 }
@@ -42,10 +38,10 @@ void parseBuildingUsageData(std::string inputFileName, std::string outputFileNam
   inputFile.close();
   std::ofstream outputFile;
   outputFile.open(outputFileName);
-  outputFile << "Building usage: "<<std::endl;
+  outputFile << "Building usage: " << std::endl << std::endl;
 
   for (std::map<std::string, int>::iterator it = usageData.begin(); it != usageData.end(); it++){
-  //std::cout << "type: "<< it->first << ", number" << it->second<< std::endl;
-    outputFile<< it->first << ":" << it->second<< std::endl;
-}
+    //std::cout << "type: "<< it->first << ", number " << it->second<< std::endl;
+    outputFile<< it->first << ": " << it->second<< std::endl;
+  }
 }
