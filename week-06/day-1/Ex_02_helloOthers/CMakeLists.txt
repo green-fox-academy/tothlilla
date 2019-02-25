@@ -3,4 +3,4 @@ project(Ex_02_helloOthers)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(Ex_02_helloOthers main.cpp)
+add_executable(Ex_02_helloOthers main.c)
