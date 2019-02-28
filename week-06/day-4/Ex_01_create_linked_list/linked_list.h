@@ -27,4 +27,7 @@ void linked_list_push_back(node_t * linked_list, int new_node_value);
 //Function for inserting a value in a new node at the beginning of a list
 void linked_list_push_front(node_t ** linked_list, int new_node_value);
 
+//Function for inserting a value in after a given node
+void linked_list_insert(node_t * linked_list_insert_after, int new_node_value);
+
 #endif //EX_01_CREATE_LINKED_LIST_LINKED_LIST_H

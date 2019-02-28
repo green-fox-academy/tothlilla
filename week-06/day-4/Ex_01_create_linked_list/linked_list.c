@@ -53,3 +53,12 @@ void linked_list_push_front(node_t ** linked_list, int new_node_value)
   new_node->next = *linked_list;
   *linked_list = new_node;
 }
+
+void linked_list_insert(node_t * linked_list_insert_after, int new_node_value)
+{
+  node_t * new_node = (node_t*)malloc(sizeof(node_t));
+  new_node->value = new_node_value;
+  new_node->next = linked_list_insert_after->next;
+  linked_list_insert_after->next = new_node;
+
+}
