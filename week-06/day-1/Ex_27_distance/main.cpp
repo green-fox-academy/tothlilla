@@ -8,23 +8,26 @@ int stringsDistance(char str[]);
 int main ()
 {
     char str[] = "This is a sample string";
-    //printf("%s", str); érdekes...
-    //char *first, *last;
-    printf("%d", stringsDistance(str));
-    //printf("%s", str);
+    //Checking before functon calling
+    printf("%s\n", str);
+    //Fuction calling
+    printf("%d\n", stringsDistance(str));
+    //Checking after functon calling
+    printf("%s\n", str);
     return 0;
 }
 
 int stringsDistance(char str[])
 {
-    char temp[strlen(str)];
-    strcat(temp,str); //muszáj vagyok betölteni az eredeti doksit valamibe, mert a *first-höz és a *last-hoz is kell darabolnom
+    int temp_size = strlen(str) + 1;
+    char temp[temp_size];
+    strcpy(temp,str); //copy the original string to tokenizing
     char *first = strtok(temp, "s");
-    int firstOccure = strlen(first);
-
-    int lastOccure = 0;
-    for (char *last = strtok(str, "s"); last != NULL; last =strtok(NULL, "s")) {
-      lastOccure += strlen(last);
+    int firstOccurence = strlen(first);
+    int lastOccurence = 0;
+    for (char *last = strtok(str, "s"); last != NULL; last = strtok(NULL, "s")) {
+      //printf("'%s'\n", last); //Checking the tokenizing
+      lastOccurence += strlen(last);
     }
-    return (lastOccure - firstOccure);
+    return (lastOccurence - 3 - firstOccurence);
 }
