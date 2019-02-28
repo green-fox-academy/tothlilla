@@ -43,6 +43,11 @@ int main() {
   } else {
     printf("This linked link is empty.\n");
   }
+  puts("");
+  //Deleting the first node of a linked list
+  linked_list_pop_front(&my_first_linked_list);
+  linked_list_print(my_first_linked_list);
+  puts("");
 
   //Deallocation the whole linked list
   linked_list_dealloc(my_first_linked_list);

@@ -76,3 +76,9 @@ int linked_list_empty(node_t * linked_list)
 {
   return (linked_list == NULL) ? 1 : 0;
 }
+
+void linked_list_pop_front(node_t ** linked_list)
+{
+  node_t * temp = *linked_list;
+  *linked_list = temp->next;
+}

@@ -36,4 +36,7 @@ int linked_list_size(node_t * linked_list);
 //Function for deciding if a linked list is empty or not
 int linked_list_empty(node_t * linked_list);
 
+//Function for deleting the first element of a linked list
+void linked_list_pop_front(node_t ** linked_list);
+
 #endif //EX_01_CREATE_LINKED_LIST_LINKED_LIST_H
