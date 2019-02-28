@@ -30,7 +30,20 @@ int main() {
   //The number of nodes in my current list
   printf("%d\n", linked_list_size(my_first_linked_list));
   puts("");
-  
+
+  //Deciding whether a linked link empty or not
+  if(!linked_list_empty(my_first_linked_list)){ //Output: This linked link is not empty.
+    printf("This linked link is not empty.\n");
+  } else {
+    printf("This linked link is empty.\n");
+  }
+  node_t * test_is_empty = NULL; //This is the case of empty list
+  if(!linked_list_empty(test_is_empty)){ //Output: This linked link is empty.
+    printf("This linked link is not empty.\n");
+  } else {
+    printf("This linked link is empty.\n");
+  }
+
   //Deallocation the whole linked list
   linked_list_dealloc(my_first_linked_list);
   printf("Hello, World!\n");

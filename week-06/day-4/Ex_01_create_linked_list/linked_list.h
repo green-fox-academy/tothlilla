@@ -33,4 +33,7 @@ void linked_list_insert(node_t * linked_list_insert_after, int new_node_value);
 //Function for returning the number of nodes in a given linked list
 int linked_list_size(node_t * linked_list);
 
+//Function for deciding if a linked list is empty or not
+int linked_list_empty(node_t * linked_list);
+
 #endif //EX_01_CREATE_LINKED_LIST_LINKED_LIST_H

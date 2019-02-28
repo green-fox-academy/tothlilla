@@ -72,3 +72,7 @@ int linked_list_size(node_t * linked_list)
   }
   return linked_link_size;
 }
+int linked_list_empty(node_t * linked_list)
+{
+  return (linked_list == NULL) ? 1 : 0;
+}
