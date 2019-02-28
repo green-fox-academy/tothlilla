@@ -30,4 +30,7 @@ void linked_list_push_front(node_t ** linked_list, int new_node_value);
 //Function for inserting a value in after a given node
 void linked_list_insert(node_t * linked_list_insert_after, int new_node_value);
 
+//Function for returning the number of nodes in a given linked list
+int linked_list_size(node_t * linked_list);
+
 #endif //EX_01_CREATE_LINKED_LIST_LINKED_LIST_H

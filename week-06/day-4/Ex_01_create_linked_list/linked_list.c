@@ -60,5 +60,15 @@ void linked_list_insert(node_t * linked_list_insert_after, int new_node_value)
   new_node->value = new_node_value;
   new_node->next = linked_list_insert_after->next;
   linked_list_insert_after->next = new_node;
+}
 
+int linked_list_size(node_t * linked_list)
+{
+  node_t * temp = linked_list;
+  int linked_link_size = 0;
+  while (temp != NULL){
+    linked_link_size++;
+    temp = temp->next;
+  }
+  return linked_link_size;
 }
