@@ -81,4 +81,23 @@ void linked_list_pop_front(node_t ** linked_list)
 {
   node_t * temp = *linked_list;
   *linked_list = temp->next;
+  free(temp);
+}
+
+int linked_list_remove(node_t ** linked_list, int searched_node_value)
+{
+  int removed_nodes = 0;
+  node_t * previus = *linked_list;
+  node_t * it = *linked_list;
+  while(it != NULL) {
+    if (it->value == searched_node_value){
+      linked_list_pop_front(&it);
+      previus->next = it;
+      removed_nodes++;
+    } else {
+      previus = it;
+      it = it->next;
+    }
+  }
+  return removed_nodes;
 }

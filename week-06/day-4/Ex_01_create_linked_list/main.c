@@ -13,12 +13,14 @@ int main() {
   puts("");
 
   //Insertation at the end
-  linked_list_push_back(my_first_linked_list, 24);
+  linked_list_push_back(my_first_linked_list, 15);
+  linked_list_push_back(my_first_linked_list, 74);
   linked_list_print(my_first_linked_list);
   puts("");
 
   //Insertation at the beginning
   linked_list_push_front(&my_first_linked_list, 30);
+  linked_list_push_front(&my_first_linked_list, 14);
   linked_list_print(my_first_linked_list);
   puts("");
 
@@ -44,8 +46,14 @@ int main() {
     printf("This linked link is empty.\n");
   }
   puts("");
+
   //Deleting the first node of a linked list
   linked_list_pop_front(&my_first_linked_list);
+  linked_list_print(my_first_linked_list);
+  puts("");
+
+  //Removing an element of a linked list by the value
+  printf("The number of a deleted nodes: %d\n", linked_list_remove(&my_first_linked_list, 15));
   linked_list_print(my_first_linked_list);
   puts("");
 
