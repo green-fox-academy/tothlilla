@@ -101,3 +101,17 @@ int linked_list_remove(node_t ** linked_list, int searched_node_value)
   }
   return removed_nodes;
 }
+
+node_t * linked_list_search(node_t * linked_list, int searched_node_value)
+{
+  node_t * node_memory_address = NULL;
+  node_t * it = linked_list;
+  while(it != NULL) {
+    if (it->value != searched_node_value){
+      node_memory_address = it;
+      return node_memory_address;
+    }
+    it++;
+  }
+  return node_memory_address;
+}

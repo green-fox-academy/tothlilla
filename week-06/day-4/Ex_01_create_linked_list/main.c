@@ -57,6 +57,10 @@ int main() {
   linked_list_print(my_first_linked_list);
   puts("");
 
+  //Searching a node memory address of a linked list by a value
+  printf("The memory address of the searched nodes: %p\n",linked_list_search(my_first_linked_list, 6));
+  puts("");
+
   //Deallocation the whole linked list
   linked_list_dealloc(my_first_linked_list);
   printf("Hello, World!\n");

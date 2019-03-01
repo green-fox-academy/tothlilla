@@ -42,4 +42,7 @@ void linked_list_pop_front(node_t ** linked_list);
 //Function for removing an element of a linked list by the value
 int linked_list_remove(node_t ** linked_list, int searched_node_value);
 
+//Function for searching a node of a linked list by a value
+node_t * linked_list_search(node_t * linked_list, int searched_node_value);
+
 #endif //EX_01_CREATE_LINKED_LIST_LINKED_LIST_H
