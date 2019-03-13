@@ -33,7 +33,7 @@ int main(void)
 	//others
 	HAL_UART_Receive_IT(&uart_handle, &buffer, 1); //in the case of USART we must do it once in the main before the callback - without this the first callback won't get signal
 	HAL_TIM_Base_Start_IT(&tim_handle); //starting the timer - init_timer() won't work without it
-
+	HAL_TIM_PWM_Start_IT(&pwm_tim_handle, TIM_CHANNEL_1);
 	for(;;);
 }
 
@@ -113,6 +113,21 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 	}
 }
 
+//---------- 5 PWM TIM3 HANDLER  -------------------
+//TIM3 external interrupt handler
+void TIM3_IRQHandler(void)
+{
+	HAL_TIM_IRQHandler(&tim_handle);
+}
+
+//declare week callback function
+void HAL_TIM_PWM_PulseFinishedCallback(TIM_HandleTypeDef *htim)
+{
+	//if (htim->Instance == TIM3)
+	if (htim->Instance == tim_handle.Instance) {
+		HAL_GPIO_TogglePin(GPIOF, GPIO_PIN_7);
+	}
+}
 
 //error handler
 static void Error_Handler(void)
