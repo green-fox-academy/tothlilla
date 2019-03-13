@@ -9,6 +9,7 @@
 GPIO_InitTypeDef user_button_handle; // the PI11 user button handle structure
 GPIO_InitTypeDef external_button_handle; // the B4 external digital(?) button handle structure
 UART_HandleTypeDef uart_handle; // UART config handle structure
+TIM_HandleTypeDef tim_handle; // timer (TIM2) config handle structure
 //no interrupt handle variables
 GPIO_InitTypeDef LEDS;		//the external Led config structure
 

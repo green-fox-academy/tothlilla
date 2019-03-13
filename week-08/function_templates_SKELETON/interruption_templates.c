@@ -43,7 +43,6 @@ void init_user_button(void)
 void init_uart(void)
 {
 	__HAL_RCC_USART1_CLK_ENABLE(); 	//giving clock
-
 	/* defining the UART configuration structure */
 	uart_handle.Instance = USART1;
 	uart_handle.Init.BaudRate = 115200;
@@ -57,6 +56,28 @@ void init_uart(void)
 	BSP_COM_Init(COM1, &uart_handle); //init USART
 	HAL_NVIC_SetPriority(USART1_IRQn, 3, 0); //set USART interrupt priority
 	HAL_NVIC_EnableIRQ(USART1_IRQn); //enable the interrupt to HAL
+}
+void init_timer(void)
+{
+    //initialize TIM2
+	__HAL_RCC_TIM2_CLK_ENABLE();		 //giving clock
+	HAL_TIM_Base_DeInit(&tim_handle);	 // de-initialize the TIM_Base, because of safety reasons
+	// configuriation of the basic mode of the timer (which direction should it count, what is the maximum value, etc.)
+	tim_handle.Instance = TIM2;			 //register base address
+	tim_handle.Init.Prescaler = 10800 - 1; // 108000000 / 10800 = 10000 -> speed of 1 count-up: 1 /10000 s = 0.1 ms
+	tim_handle.Init.Period = 5000 - 1; 	// 5000 x 0.1 ms = 500 ms = 0.5 s period */
+	tim_handle.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
+	tim_handle.Init.CounterMode = TIM_COUNTERMODE_UP;
+    HAL_TIM_Base_Init(&tim_handle); 	 //configure the timer
+	HAL_NVIC_SetPriority(TIM2_IRQn, 2, 0); //set TIM2 interrupt priority
+	HAL_NVIC_EnableIRQ(TIM2_IRQn); //enable the interrupt to HAL
+}
+
+void init_PWM(void)
+{
+
+
+
 }
 void init_external_led(GPIO_InitTypeDef LEDS)
 {
