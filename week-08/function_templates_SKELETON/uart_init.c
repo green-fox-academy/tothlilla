@@ -1,5 +1,14 @@
 #include "interruption_templates.h"
 
+//init printf() function
+#include <string.h>
+#define UART_PUTCHAR int __io_putchar(int ch)
+UART_PUTCHAR
+{
+    HAL_UART_Transmit(&uart, (uint8_t*)&ch, 1, 0xFFFF);
+    return ch;
+}
+
 void init_GPIO_BSP_uart()
 {
 //init uart for GPIO purpose with BSP
