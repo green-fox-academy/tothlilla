@@ -15,12 +15,17 @@
 #define UART_PUTCHAR int __io_putchar(int ch)
 
 UART_HandleTypeDef UartHandle;
+GPIO_InitTypeDef LEDS;
 
 /* the timer's config structure */
-TIM_HandleTypeDef TimHandle;
+TIM_HandleTypeDef TimHandle1;
+TIM_HandleTypeDef TimHandle2;
+TIM_HandleTypeDef TimHandle3;
 
-uint16_t tim_val = 0;		/* variable to store the actual value of the timer's register (CNT) */
-uint16_t seconds = 0;		/* variable to store the value of ellapsed seconds */
+uint16_t tim_val1 = 0;		/* variable to store the actual value of the timer's register (CNT) */
+uint16_t tim_val2 = 0;
+uint16_t tim_val3 = 0;
+
 
 static void Error_Handler(void);
 static void SystemClock_Config(void);
@@ -28,7 +33,7 @@ static void SystemClock_Config(void);
 int main(void)
 {
     HAL_Init();
-
+    __HAL_RCC_GPIOF_CLK_ENABLE();
     /* this function call sets the timers input clock to 108 Mhz (=108000000 Hz) */
     SystemClock_Config();
 
@@ -41,44 +46,102 @@ int main(void)
     UartHandle.Init.HwFlowCtl = UART_HWCONTROL_NONE;
     UartHandle.Init.Mode = UART_MODE_TX_RX;
     BSP_COM_Init(COM1, &UartHandle);
-    BSP_LED_Init(LED_GREEN);
+
+
+    //initialize LED
+
+
+	LEDS.Pin = GPIO_PIN_8 | GPIO_PIN_9 | GPIO_PIN_10;  	// setting up 3 pins
+	LEDS.Mode = GPIO_MODE_OUTPUT_PP;
+	LEDS.Pull = GPIO_NOPULL;
+	LEDS.Speed = GPIO_SPEED_HIGH;
+
+	HAL_GPIO_Init(GPIOF, &LEDS);
+
+    __HAL_RCC_TIM2_CLK_ENABLE();
+    __HAL_RCC_TIM3_CLK_ENABLE();
+    __HAL_RCC_TIM4_CLK_ENABLE();
 
     /* we need to enable the TIM2 */
-    __HAL_RCC_TIM2_CLK_ENABLE();
 
-    TimHandle.Instance			= TIM2;
-    TimHandle.Init.Prescaler		= 10800 - 1;	/* 108000000/10800=10000 -> speed of 1 count-up: 1/10000 sec = 0.1 ms */
-    TimHandle.Init.Period		= 10000 - 1;	/* 10000 x 0.1 ms = 1 second period */
-    //TimHandle.Init.Period		= 20000 - 1;	/* 20000 x 0.1 ms = 2 second period */
-    TimHandle.Init.ClockDivision	= TIM_CLOCKDIVISION_DIV1;
-    TimHandle.Init.CounterMode		= TIM_COUNTERMODE_UP;
+    TimHandle1.Instance			= TIM2;
+    TimHandle1.Init.Prescaler		= 54000 - 1;	/* 108000000/54000=2000 -> speed of 1 count-up: 1/2000 sec = 0.5 ms */
+    TimHandle1.Init.Period		= 24000 - 1;	/* 24000 x 0.5 ms = 12 second period */
+    TimHandle1.Init.ClockDivision	= TIM_CLOCKDIVISION_DIV1;
+    TimHandle1.Init.CounterMode		= TIM_COUNTERMODE_UP;
+
+    /* we need to enable the TIM3 */
+
+
+    TimHandle2.Instance			= TIM3;
+    TimHandle2.Init.Prescaler		= 54000 - 1;	/* 108000000/54000=2000 -> speed of 1 count-up: 1/2000 sec = 0.5 ms */
+    TimHandle2.Init.Period		= 24000 - 1;	/* 24000 x 0.5 ms = 12 second period */
+    TimHandle2.Init.ClockDivision	= TIM_CLOCKDIVISION_DIV1;
+    TimHandle2.Init.CounterMode		= TIM_COUNTERMODE_UP;
+
+    /* we need to enable the TIM4 */
+
+
+    TimHandle3.Instance			= TIM4;
+    TimHandle3.Init.Prescaler		= 54000 - 1;	/* 108000000/54000=2000 -> speed of 1 count-up: 1/2000 sec = 0.5 ms */
+    TimHandle3.Init.Period		= 24000 - 1;	/* 24000 x 0.5 ms = 12 second period */
+    TimHandle3.Init.ClockDivision	= TIM_CLOCKDIVISION_DIV1;
+    TimHandle3.Init.CounterMode		= TIM_COUNTERMODE_UP;
 
     /* configure the timer */
-    HAL_TIM_Base_Init(&TimHandle);
-
+    HAL_TIM_Base_Init(&TimHandle1);
+    HAL_TIM_Base_Init(&TimHandle2);
+    HAL_TIM_Base_Init(&TimHandle3);
     /* starting the timer */
-    HAL_TIM_Base_Start(&TimHandle);
+    HAL_TIM_Base_Start(&TimHandle1);
+    HAL_TIM_Base_Start(&TimHandle2);
+    HAL_TIM_Base_Start(&TimHandle3);
 
     while (1) {
+        tim_val1 = __HAL_TIM_GET_COUNTER(&TimHandle1);
+        tim_val2 = __HAL_TIM_GET_COUNTER(&TimHandle2);
+        tim_val3 = __HAL_TIM_GET_COUNTER(&TimHandle3);
+    	//green
+        if (tim_val1 == 0) {
 
-        /* blinking the user LED with 1 Hz (1 on and 1 off per seconds) */
-        tim_val = __HAL_TIM_GET_COUNTER(&TimHandle);
-        if (tim_val == 0) {
-            /* calling HAL_GetTick() to check whether our timer is precise enough */
-            printf("%d ms\r\n", HAL_GetTick());
-            BSP_LED_On(LED_GREEN);
+            printf("zold\r\n");
+            HAL_GPIO_WritePin(GPIOF, GPIO_PIN_8, GPIO_PIN_SET);
+            //HAL_GPIO_WritePin(GPIOF, GPIO_PIN_8, GPIO_PIN_SET);
+            //HAL_GPIO_WritePin(GPIOF, GPIO_PIN_9, GPIO_PIN_SET);
         }
-        if (tim_val == 5000) {  //in the case of 0.5 sec long toggles
-        //if (tim_val == 10000) { //in the case of 1 sec long toggles
-            printf("%d ms \r\n", HAL_GetTick());
-            BSP_LED_Off(LED_GREEN);
-            seconds++;
+
+        if (tim_val1 == 6000) {
+            HAL_GPIO_WritePin(GPIOF, GPIO_PIN_8, GPIO_PIN_RESET);
+            //HAL_GPIO_WritePin(GPIOF, GPIO_PIN_8, GPIO_PIN_RESET);
+            //HAL_GPIO_WritePin(GPIOF, GPIO_PIN_9, GPIO_PIN_RESET);
         }
-        if (seconds == 10) {
-        //if (seconds == 5) { 					//in the case of twice longer period half shorter counting needs to reach 10 sec
-            printf("10 seconds ellapsed.\r\n");
-            seconds = 0;
+
+        //yellow
+
+        if (tim_val2 == 6000) {
+            HAL_GPIO_WritePin(GPIOF, GPIO_PIN_9, GPIO_PIN_SET);
         }
+
+        if (tim_val2 == 12000) {
+            HAL_GPIO_WritePin(GPIOF, GPIO_PIN_9, GPIO_PIN_RESET);
+        }
+        //red
+
+        if (tim_val3 == 12000) {
+            HAL_GPIO_WritePin(GPIOF, GPIO_PIN_10, GPIO_PIN_SET);
+        }
+        //yellow set again
+        if (tim_val2 == 18000) {
+            HAL_GPIO_WritePin(GPIOF, GPIO_PIN_9, GPIO_PIN_SET);
+        }
+        //reset yellow and red
+        if (tim_val3 == 23999) {
+        	HAL_GPIO_WritePin(GPIOF, GPIO_PIN_9, GPIO_PIN_RESET);
+        }
+        if (tim_val2 == 23999) {
+            HAL_GPIO_WritePin(GPIOF, GPIO_PIN_10, GPIO_PIN_RESET);
+        }
+
     }
 }
 
