@@ -7,19 +7,19 @@ TIM_OC_InitTypeDef sConfig;
 void pwm_init(){
 
     // GPIO led config //TIM3_CH1 PB4 pinnel és AF2 alternate functionnel is mûködik
-    __HAL_RCC_GPIOA_CLK_ENABLE(); //A pont clock
-    //__HAL_RCC_GPIOB_CLK_ENABLE(); //B port clock
+    __HAL_RCC_GPIOA_CLK_ENABLE(); //A port clock
     PA15_LED_config.Pin = GPIO_PIN_15; //PA 15 pin able to compare channel 1 with alternate function AF
-    //LEDS.Pin = GPIO_PIN_4; // PB port 4 pin
     PA15_LED_config.Mode = GPIO_MODE_AF_PP;	/* configure as output, in push-pull mode */
-    //LEDS.Mode = GPIO_MODE_AF_PP; //same as PA port 15 pin
     PA15_LED_config.Pull = GPIO_NOPULL;
-    //LEDS.Pull = GPIO_NOPULL; //same as PA port 15 pin
     PA15_LED_config.Speed = GPIO_SPEED_HIGH;
-    //LEDS.Speed = GPIO_SPEED_HIGH; //same as PA port 15 pin
     PA15_LED_config.Alternate = GPIO_AF1_TIM2;	/* this alternate function we need to use TIM2 in output compare mode */
-    //LEDS.Alternate = GPIO_AF2_TIM3; //alternate function to TIM3 channel 1 with PB4 led pin
     HAL_GPIO_Init(GPIOA, &PA15_LED_config);
+    //__HAL_RCC_GPIOB_CLK_ENABLE(); //B port clock
+    //LEDS.Pin = GPIO_PIN_4; // PB port 4 pin
+    //LEDS.Mode = GPIO_MODE_AF_PP; //same as PA port 15 pin
+    //LEDS.Pull = GPIO_NOPULL; //same as PA port 15 pin
+    //LEDS.Speed = GPIO_SPEED_HIGH; //same as PA port 15 pin
+    //LEDS.Alternate = GPIO_AF2_TIM3; //alternate function to TIM3 channel 1 with PB4 led pin
     //HAL_GPIO_Init(GPIOB, &LEDS); //init B port's led in pwm mode
 
     /* base timer config ***************************************************************************************************/

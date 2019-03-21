@@ -4,10 +4,10 @@ void init_GPIO_extern_button()
 {
 	//init GPIO external button for general purpose
 	__HAL_RCC_GPIOB_CLK_ENABLE(); //giving clock
-	external_button_handle.Pin = GPIO_PIN_4;
-	external_button_handle.Mode = GPIO_MODE_INPUT;
-	external_button_handle.Pull = GPIO_NOPULL;
-	external_button_handle.Speed = GPIO_SPEED_FAST;
+	external_button.Pin = GPIO_PIN_4;
+	external_button.Mode = GPIO_MODE_INPUT;
+	external_button.Pull = GPIO_NOPULL;
+	external_button.Speed = GPIO_SPEED_FAST;
 }
 
 void init_external_button(void)

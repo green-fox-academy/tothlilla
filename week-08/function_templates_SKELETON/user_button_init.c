@@ -11,6 +11,6 @@ void init_user_button(void)
 	//user_button_handle.Mode = GPIO_MODE_IT_FALLING; // our mode is interrupt on falling edge
 	//user_button_handle.Mode = GPIO_MODE_IT_RISING_FALLING;
 	HAL_GPIO_Init(GPIOI, &user_button_handle); // init PI11 user button
-	HAL_NVIC_SetPriority(EXTI15_10_IRQn, 4, 0);	//set blue PI11 user button interrupt priority
+	HAL_NVIC_SetPriority(EXTI15_10_IRQn, 4, 0);	//set blue PI11 user button interrupt priority //a 11 a 10 és a 15 között van
 	HAL_NVIC_EnableIRQ(EXTI15_10_IRQn); //enable the interrupt to HAL
 }
