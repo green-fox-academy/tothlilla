@@ -3,8 +3,8 @@
 int main()
 {
 	//open origin image
-	Mat originImg;
-	originImg = imread("lena.jpg"); //default read mode of image
+	cv::Mat originImg;
+	originImg = cv::imread("lena.jpg"); //default read mode of image
 
 	//error handling
 	if (originImg.empty()){
@@ -13,9 +13,9 @@ int main()
 	}
 
 	//create window
-	namedWindow("image", WINDOW_NORMAL);
+	cv::namedWindow("image", cv::WINDOW_NORMAL);
 	//move window
-	moveWindow("image", 0, 0);
+	cv::moveWindow("image", 0, 0);
 	//display image in a specified window
 	imshow("image", originImg);
 
@@ -25,8 +25,8 @@ int main()
 	changeImageBrightnessWithConvertTo(originImg);
 
 	
-	//waitKey(0); //display infinite time
-	waitKey(5000); //display 3 sec
+	//cv::waitKey(0); //display infinite time
+	cv::waitKey(5000); //display 3 sec
 
 
 	return 0;

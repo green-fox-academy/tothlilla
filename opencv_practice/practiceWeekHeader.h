@@ -3,7 +3,7 @@
 #include <opencv2/opencv.hpp>
  //type of window - changable
 using namespace std;
-using namespace cv;
+//using namespace cv;
 
-void changeImageBrightnessWithScalar(Mat originImg);
-void changeImageBrightnessWithConvertTo(Mat originImg);
+void changeImageBrightnessWithScalar(cv::Mat originImg);
+void changeImageBrightnessWithConvertTo(cv::Mat originImg);
