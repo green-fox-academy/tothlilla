@@ -8,7 +8,7 @@ int main()
 
 	//error handling
 	if (originImg.empty()){
-		cout << "Image cannot be loaded..!!" << endl;
+		std::cout << "Image cannot be loaded..!!" << std::endl;
 		return -1;
 	}
 
