@@ -10,7 +10,12 @@ int main()
 	namedWindow("image", windowFlag);
 	//display image in a specified window
 	imshow("image", originImg);
+
+	//change image brightness with Scalar function and display
+	changeImageBrightnessWithScalar(originImg);
+
 	waitKey(0); //display infinite time
+
 
 	return 0;
 }
