@@ -7,3 +7,4 @@
 
 void changeImageBrightnessWithScalar(cv::Mat originImg);
 void changeImageBrightnessWithConvertTo(cv::Mat originImg);
+void changeImageBrightnessPixelByPixel(cv::Mat originImg);

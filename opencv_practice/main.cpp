@@ -23,8 +23,9 @@ int main()
 	changeImageBrightnessWithScalar(originImg);
 	//change image brightness with convert function and display
 	changeImageBrightnessWithConvertTo(originImg);
+	//change image brightness in a loop pixel by pixel
+	changeImageBrightnessPixelByPixel(originImg);
 
-	
 	//cv::waitKey(0); //display infinite time
 	cv::waitKey(5000); //display 3 sec
 
