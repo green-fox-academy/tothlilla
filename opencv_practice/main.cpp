@@ -14,7 +14,8 @@ int main()
 
 	//create window
 	namedWindow("image", WINDOW_NORMAL);
-
+	//move window
+	moveWindow("image", 0, 0);
 	//display image in a specified window
 	imshow("image", originImg);
 
@@ -24,7 +25,8 @@ int main()
 	changeImageBrightnessWithConvertTo(originImg);
 
 	
-	waitKey(0); //display infinite time
+	//waitKey(0); //display infinite time
+	waitKey(5000); //display 3 sec
 
 
 	return 0;
