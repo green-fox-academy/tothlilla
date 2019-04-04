@@ -3,7 +3,7 @@
 void changeImageBrightnessWithScalar(cv::Mat originImg)
 {
 	cv::Mat brightImg = originImg + cv::Scalar(75, 75, 75);
-	cv::namedWindow("image2", cv::WINDOW_NORMAL);
+	cv::namedWindow("image2", cv::WINDOW_AUTOSIZE);
 	cv::moveWindow("image2", 0, 280);
 	imshow("image2", brightImg);
 }
@@ -15,12 +15,11 @@ void changeImageBrightnessWithConvertTo(cv::Mat originImg)
 	//double alpha contrast
 	//int beta brightness
 	originImg.convertTo(brightImg, -1, 1, -205);
-	cv::namedWindow("image3", cv::WINDOW_NORMAL);
+	cv::namedWindow("image3", cv::WINDOW_AUTOSIZE);
 	cv::moveWindow("image3", 0, 560);
 	imshow("image3", originImg);
 }
 
-//change image brightness with convert function and display
 void changeImageBrightnessPixelByPixel(cv::Mat originImg) {
 	//Initial pixel values equal to zero, same size and type as the original image
 	cv::Mat brightImg = cv::Mat::zeros(originImg.size(), originImg.type());
@@ -32,7 +31,7 @@ void changeImageBrightnessPixelByPixel(cv::Mat originImg) {
 			}
 		}
 	}
-	cv::namedWindow("image4", cv::WINDOW_NORMAL);
+	cv::namedWindow("image4", cv::WINDOW_AUTOSIZE);
 	cv::moveWindow("image4", 500, 0);
 	imshow("image4", brightImg);
 }

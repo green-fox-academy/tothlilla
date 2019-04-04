@@ -13,7 +13,7 @@ int main()
 	}
 
 	//create window
-	cv::namedWindow("image", cv::WINDOW_NORMAL);
+	cv::namedWindow("image", cv::WINDOW_AUTOSIZE);
 	//move window
 	cv::moveWindow("image", 0, 0);
 	//display image in a specified window
@@ -26,9 +26,15 @@ int main()
 	//change image brightness in a loop pixel by pixel
 	changeImageBrightnessPixelByPixel(originImg);
 
-	//cv::waitKey(0); //display infinite time
-	cv::waitKey(5000); //display 3 sec
+	//change image contrast with '*' operator
+	changeImageContrastWithOperators(originImg);
+	//change image contrast with convert function and display
+	changeImageContrastWithConvertTo(originImg);
+	//change contrast brightness in a loop pixel by pixel
+	changeImageContrastPixelByPixel(originImg);
 
+	//cv::waitKey(0); //display infinite time
+	cv::waitKey(5000); //display 5 sec
 
 	return 0;
 }
