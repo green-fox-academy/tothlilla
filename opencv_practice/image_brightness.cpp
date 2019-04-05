@@ -17,7 +17,7 @@ void changeImageBrightnessWithConvertTo(cv::Mat originImg)
 	originImg.convertTo(brightImg, -1, 1, -205);
 	cv::namedWindow("image3", cv::WINDOW_AUTOSIZE);
 	cv::moveWindow("image3", 0, 560);
-	imshow("image3", originImg);
+	imshow("image3", brightImg);
 }
 
 void changeImageBrightnessPixelByPixel(cv::Mat originImg) {

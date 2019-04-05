@@ -1,6 +1,6 @@
 #include "practiceWeekHeader.h"
 
-void changeImageGrayWithImread(cv::Mat originImg) 
+void changeImageGrayWithImread(cv::Mat originImg)
 {
 	originImg = cv::imread("lena.jpg", cv::IMREAD_GRAYSCALE);
 	cv::namedWindow("gray image 1", cv::WINDOW_AUTOSIZE);
