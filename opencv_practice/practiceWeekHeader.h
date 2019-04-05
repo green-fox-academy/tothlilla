@@ -12,3 +12,5 @@ void changeImageBrightnessPixelByPixel(cv::Mat originImg);
 void changeImageContrastWithOperators(cv::Mat originImg);
 void changeImageContrastWithConvertTo(cv::Mat originImg);
 void changeImageContrastPixelByPixel(cv::Mat originImg);
+
+void blendImagesWithAddWeighted();

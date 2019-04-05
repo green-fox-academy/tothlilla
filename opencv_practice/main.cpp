@@ -33,6 +33,9 @@ int main()
 	//change contrast brightness in a loop pixel by pixel
 	changeImageContrastPixelByPixel(originImg);
 
+	//blending two images
+	blendImagesWithAddWeighted();
+
 	//cv::waitKey(0); //display infinite time
 	cv::waitKey(5000); //display 5 sec
 
