@@ -2,7 +2,7 @@
 
 ///////////////////////////////////
 //------------START----------------
-void finishedFunctions(cv::Mat originImg)
+void finishedFunctions(cv::Mat originImg, cv::Mat originImgToEllipse)
 {
 	//choice one of the topics and click
 	//display_basic_image_with_error_handler(originImg);
@@ -10,7 +10,7 @@ void finishedFunctions(cv::Mat originImg)
 	//contrastFunctions(originImg);
 	//blendFunctions();
 	//grayFunctions(originImg);
-	drawFunctions();
+	drawFunctions(originImg, originImgToEllipse);
 }
 
 ////////////////////////////////////
@@ -66,10 +66,12 @@ void grayFunctions(cv::Mat originImg)
 	changeImageGrayWithCvtColor2(originImg); //BGR mode
 }
 //$$$$$$ Use basic drawing funs $$$$$$$$
-void drawFunctions()
+void drawFunctions(cv::Mat originImg, cv::Mat originImgToEllipse)
 {
 	//draw line
-	drawLine();
+	//drawLine();
 	//draw ellipse
-	drawEllipse();
+	//drawEllipse(originImgToEllipse);
+	//draw circle
+	drawCircle(originImg);
 }

@@ -6,14 +6,14 @@
 //using namespace cv;
 
 //----------START-------------
-void finishedFunctions(cv::Mat originImg);
+void finishedFunctions(cv::Mat originImg, cv::Mat originImgToEllipse);
 //----------TOPICS------------
 void display_basic_image_with_error_handler(cv::Mat originImg);
 void brightFunctions(cv::Mat originImg);
 void contrastFunctions(cv::Mat originImg);
 void grayFunctions(cv::Mat originImg);
 void blendFunctions();
-void drawFunctions();
+void drawFunctions(cv::Mat originImg, cv::Mat originImgToEllipse);
 
 void changeImageBrightnessWithScalar(cv::Mat originImg);
 void changeImageBrightnessWithConvertTo(cv::Mat originImg);
@@ -30,4 +30,5 @@ void changeImageGrayWithCvtColor1(cv::Mat originImg);
 void changeImageGrayWithCvtColor2(cv::Mat originImg);
 
 void drawLine();
-void drawEllipse();
+void drawEllipse(cv::Mat originImgToEllipse);
+void drawCircle(cv::Mat origin);
