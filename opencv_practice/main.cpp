@@ -5,7 +5,7 @@ int main()
 	//open origin image
 	cv::Mat originImg;
 	originImg = cv::imread("lena.jpg"); //default read mode of image
-
+	
 	//error handling
 	if (originImg.empty()){
 		std::cout << "Image cannot be loaded..!!" << std::endl;
@@ -38,9 +38,15 @@ int main()
 
 	//change image to gray
 	changeImageGrayWithImread(originImg);
-	changeImageGrayWithCvtColor1(originImg); //RGB mode
+	//changeImageGrayWithCvtColor1(originImg); //RGB mode
 	changeImageGrayWithCvtColor2(originImg); //BGR mode
 	
+	//draw line
+	drawLine();
+	//draw elipses
+	drawEllipse();
+
+
 	//cv::waitKey(0); //display infinite time
 	cv::waitKey(5000); //display 5 sec
 
