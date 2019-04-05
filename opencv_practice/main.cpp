@@ -36,6 +36,11 @@ int main()
 	//blending two images
 	blendImagesWithAddWeighted();
 
+	//change image to gray
+	changeImageGrayWithImread(originImg);
+	changeImageGrayWithCvtColor1(originImg); //RGB mode
+	changeImageGrayWithCvtColor2(originImg); //BGR mode
+	
 	//cv::waitKey(0); //display infinite time
 	cv::waitKey(5000); //display 5 sec
 

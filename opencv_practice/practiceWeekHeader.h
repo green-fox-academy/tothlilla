@@ -14,3 +14,7 @@ void changeImageContrastWithConvertTo(cv::Mat originImg);
 void changeImageContrastPixelByPixel(cv::Mat originImg);
 
 void blendImagesWithAddWeighted();
+
+void changeImageGrayWithImread(cv::Mat originImg);
+void changeImageGrayWithCvtColor1(cv::Mat originImg);
+void changeImageGrayWithCvtColor2(cv::Mat originImg);
