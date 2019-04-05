@@ -5,19 +5,20 @@ void changeImageContrastWithOperators(cv::Mat originImg)
 	cv::Mat contrastImg = originImg * 2;
 	cv::namedWindow("image5", cv::WINDOW_AUTOSIZE);
 	cv::moveWindow("image5", 500, 280);
-	imshow("image5", contrastImg);
+	cv::imshow("image5", contrastImg);
 }
 
 void changeImageContrastWithConvertTo(cv::Mat originImg)
 {
 	cv::Mat contrastImg;
-	//image.convertTo(new_image, -1, alpha, beta);
-	//double alpha contrast
-	//int beta brightness
 	originImg.convertTo(contrastImg, -1, 0.5, 0);
 	cv::namedWindow("image6", cv::WINDOW_AUTOSIZE);
 	cv::moveWindow("image6", 500, 560);
-	imshow("image6", contrastImg);
+	cv::imshow("image6", contrastImg);
+	//--------HINT-----
+	//image.convertTo(new_image, -1, alpha, beta);
+	//double alpha contrast
+	//int beta brightness
 }
 
 void changeImageContrastPixelByPixel(cv::Mat originImg) {
@@ -33,5 +34,5 @@ void changeImageContrastPixelByPixel(cv::Mat originImg) {
 	}
 	cv::namedWindow("image7", cv::WINDOW_AUTOSIZE);
 	cv::moveWindow("image7", 1000, 0);
-	imshow("image7", contrastImg);
+	cv::imshow("image7", contrastImg);
 }

@@ -5,7 +5,7 @@ void drawLine()
 	cv::Mat lineWindow = cv::Mat::zeros(cv::Size(500, 280), CV_8UC3);
 	cv::line(lineWindow, cv::Point(0, 0), cv::Point(500, 280), cv::Scalar(255, 255, 10), 10, cv::FILLED);
 	//Line types: FILLED LINE_4 LINE_8 LINE_AA 
-	imshow("line", lineWindow);
+	cv::imshow("line", lineWindow);
 	cv::moveWindow("line", 250, 0);
 }
 void drawEllipse()
@@ -40,9 +40,10 @@ void drawEllipse()
 		cv::Scalar(10, 10, 255), 1, cv::LINE_8, 0);
 
 
-	imshow("ellipse", ellipseWindow);
+	cv::imshow("ellipse", ellipseWindow);
 	cv::moveWindow("ellipse", 250, 300);
 }
+//--------------HINT--------------------
 /*
 void cv::ellipse(	
 	InputOutputArray 	img,

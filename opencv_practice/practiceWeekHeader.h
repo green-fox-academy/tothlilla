@@ -5,6 +5,16 @@
 //using namespace std;
 //using namespace cv;
 
+//----------START-------------
+void finishedFunctions(cv::Mat originImg);
+//----------TOPICS------------
+void display_basic_image_with_error_handler(cv::Mat originImg);
+void brightFunctions(cv::Mat originImg);
+void contrastFunctions(cv::Mat originImg);
+void grayFunctions(cv::Mat originImg);
+void blendFunctions();
+void drawFunctions();
+
 void changeImageBrightnessWithScalar(cv::Mat originImg);
 void changeImageBrightnessWithConvertTo(cv::Mat originImg);
 void changeImageBrightnessPixelByPixel(cv::Mat originImg);
